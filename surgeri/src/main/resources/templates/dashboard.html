@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SURGERi</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1.5">
+<link rel="stylesheet" href="/assets/css/font.css">
+<link rel="stylesheet" href="/assets/css/material.icons.css">
+<link rel="stylesheet" href="/assets/css/material.min.css">
+<link rel="stylesheet" href="/assets/css/datatable.material.min.css">
+<link rel="stylesheet" href="/assets/css/main.css">
+<script src="/assets/js/jquery.min.js"></script>
+<script src="/assets/js/jquery.datatable.min.js"></script>
+<script src="/assets/js/datatable.material.min.js"></script>
+</head>
+<body onload="getPatientsData()">
+	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+		<header
+			class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
+			<div class="mdl-layout--large-screen-only mdl-layout__header-row">
+				<h4>SURGERi</h4>
+			</div>
+		</header>
+
+		<main class="mdl-layout__content">
+		<div class="dropdown right logout-margins">
+			<button
+				class="dropbtn mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
+				<i class="material-icons">person</i>
+			</button>
+			<div class="dropdown-content" onclick="logout()">
+				Logout
+			</div>
+		</div>
+
+		<div class="mdl-grid">
+			<div class="mdl-cell mdl-cell--1-col"></div>
+			<div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col card-margins">
+				<div class="mdl-card__title center">
+					<h4>Add patient record</h4>
+				</div>
+				<div>
+					<!-- Record add error -->
+					<div id="recordErrorDiv" name="recordErrorDiv"
+						class="error center hide"></div>
+
+					<form>
+						<div class="mdl-card__supporting-text" style="padding-left: 60px;">
+							<!-- Patient name -->
+							<div
+								class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
+								id="patientnameDiv">
+								<input class="mdl-textfield__input" type="text" id="patientName"
+									name="patientName"> <label class="mdl-textfield__label"
+									for="patientName">Patient Name</label> <span
+									class="mdl-textfield__error">Please enter valid patient
+									name!</span>
+							</div>
+
+							<!-- Age -->
+							<div
+								class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
+								id="ageDiv">
+								<input class="mdl-textfield__input" type="text"
+									pattern="-?[0-9]*(\.[0-9]+)?" id="age" name="age"> <label
+									class="mdl-textfield__label" for="age">Age</label> <span
+									class="mdl-textfield__error">Enter valid age!</span>
+							</div>
+
+							<!-- Sex -->
+							<div
+								class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
+								id="sexDiv">
+								<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect"
+									for="option-1"> <input type="radio" id="option-1"
+									class="mdl-radio__button" name="sex" value="Male" checked>
+									<span class="mdl-radio__label">Male</span>
+								</label> <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect"
+									for="option-2"> <input type="radio" id="option-2"
+									class="mdl-radio__button" name="sex" value="Female">
+									<span class="mdl-radio__label">Female</span>
+								</label>
+							</div>
+
+							<!-- Mobile number -->
+							<div
+								class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
+								id="mobilenumberDiv">
+								<input class="mdl-textfield__input" type="text"
+									pattern="-?[0-9]*(\.[0-9]+)?" id="mobileNumber"
+									name="mobileNumber"> <label
+									class="mdl-textfield__label" for="mobileNumber">Mobile
+									number</label> <span class="mdl-textfield__error">Enter valid
+									mobile number!</span>
+							</div>
+							
+						</div>
+						<div class="mdl-card__actions center">
+							<button
+								class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored"
+								onclick="addPatient()" type="button">Add patient</button>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="mdl-cell mdl-cell--1-col"></div>
+			<div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--5-col card-margins">
+				<div class="mdl-card__title center">
+					<h4>Employee info</h4>
+				</div>
+				<div class="mdl-card__supporting-text overflow-auto">
+					<table id="patientTable"
+						class="mdl-data-table mdl-js-data-table max-width">
+						<thead>
+							<tr>
+								<th>Id</th>
+								<th class="mdl-data-table__cell--non-numeric">Patient name</th>
+								<th>Age</th>
+								<th class="mdl-data-table__cell--non-numeric">Sex</th>
+								<th>Mobile number</th>
+							</tr>
+						</thead>
+						<tbody id="patientData">
+
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		</main>
+	</div>
+
+	<script src="/assets/js/dashboard.js"></script>
+	<script src="/assets/js/login.js"></script>
+	<script src="/assets/js/material.min.js"></script>
+</body>
+</html>

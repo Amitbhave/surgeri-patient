@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SURGERi</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5">
+<link rel="stylesheet" href="/assets/css/font.css">
+<link rel="stylesheet" href="/assets/css/material.icons.css">
+<link rel="stylesheet" href="/assets/css/material.min.css">
+<link rel="stylesheet" href="/assets/css/main.css">
+<script src="/assets/js/jquery.min.js"></script>
+</head>
+<body background="/assets/images/background.jpg">
+
+	<div class="mdl-layout mdl-js-layout">
+		<main class="mdl-layout__content">
+			<div class="mdl-grid" style="padding-top: 150px;">
+				<div class="mdl-cell--4-col"></div>
+				
+				<div class="mdl-card mdl-cell--4-col mdl-shadow--2dp">
+					<div class="mdl-card__title center">
+						<h4>Login</h4>
+					</div>
+					
+					<!-- Login error -->
+					<div id="errorDiv" name="errorDiv" class="error center hide">
+						
+					</div>
+					
+					<form>
+						<div class="mdl-card__supporting-text" style="padding-left: 60px;">
+							<!-- Username -->
+							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="usernameDiv">
+								<input class="mdl-textfield__input" type="text" id="username" name="username">
+								<label class="mdl-textfield__label" for="username">Username</label>
+								<span class="mdl-textfield__error">Please enter valid username!</span>
+							</div>
+								
+							<!-- Password -->
+							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="passwordDiv">
+								<input class="mdl-textfield__input" type="password" id="password" name="password">
+								<label class="mdl-textfield__label" for="password">Password</label>
+								<span class="mdl-textfield__error">Password can't be empty!</span>
+							</div>
+						</div>
+						<div class="mdl-card__actions center">
+							<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" 
+							 onclick="doLogin()" type="button">
+								Login
+							</button>
+						</div>
+					</form>
+					
+				</div>
+				
+				<div class="mdl-cell--4-col"></div>
+			</div>
+		</main>
+	</div>
+
+	<script src="/assets/js/login.js"></script>
+	<script src="/assets/js/material.min.js"></script>
+</body>
+</html>
